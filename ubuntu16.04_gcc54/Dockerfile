@@ -33,12 +33,12 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bk \
  && python2.7 /root/get-pip.py \
  && locale-gen en_US.UTF-8 \
  && locale-gen zh_CN.UTF-8 \
- && echo 'export LANG="zh_CN.UTF-8"'>>~/.bashrc \
- && rm \
+ && echo 'export LANG="zh_CN.UTF-8"'>>~/.bashrc \    
+ && rm -rf /var/lib/apt/lists/* \
     /root/sources.list.xenial \
     /root/pip.conf.xenial \
     /root/get-pip.py \
- && rm -rf /var/lib/apt/lists/* 
+ && cd / 
 
 CMD ["/bin/bash"]
 

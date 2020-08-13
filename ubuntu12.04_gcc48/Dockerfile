@@ -56,14 +56,13 @@ RUN cd / \
  && echo 'export LANG="zh_CN.UTF-8"'>>~/.bashrc \
  && add-apt-repository -r -y ppa:ubuntu-toolchain-r/test \
  && add-apt-repository -r -y ppa:fkrull/deadsnakes \
- && rm \
+ && rm -rf \ 
+    /root/cmake-3.5.1/ \
+    /var/lib/apt/lists/* \
     /root/sources.list.precise \
     /root/pip.conf.precise \
     /root/get-pip.py \
     /root/cmake-3.5.1.tar.gz \
- && rm -rf \ 
-    /root/cmake-3.5.1/ \
-    /var/lib/apt/lists/* \
  && cd / 
 
 CMD ["/bin/bash"]
