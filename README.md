@@ -4,7 +4,7 @@
 <!-- TOC -->
 - [docker说明](#docker说明)
   - [ubuntu1204_gcc48](#ubuntu1204_gcc48)
-  - [ubuntu1604_gcc48](#ubuntu1604_gcc48)
+  - [ubuntu1604_gcc54](#ubuntu1604_gcc54)
 
 ## ubuntu1204_gcc48
 
@@ -25,7 +25,7 @@
   * apt-file
 
 
-## ubuntu1604_gcc48
+## ubuntu1604_gcc54
 
 * 基础镜像: ubunt:16.04 
 

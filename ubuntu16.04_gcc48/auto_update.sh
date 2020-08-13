@@ -1,2 +1,0 @@
-docker tag ubuntu1604_gcc48_0 xxq000/ubuntu1604_gcc48
-docker push xxq000/ubuntu1604_gcc48
