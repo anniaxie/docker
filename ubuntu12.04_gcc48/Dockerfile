@@ -17,6 +17,7 @@ COPY ./doc /root/
 # python3.5 
 # pip3 20.2.2
 # 解决python和echo均不能打印中文问题
+# 解决本机和docker内时间差相差8h问题
 RUN cd / \
  && cp /etc/apt/sources.list /etc/apt/sources.list.bk \
  && cp /root/sources.list.precise /etc/apt/sources.list \
@@ -27,6 +28,9 @@ RUN cd / \
     wget \
     python-software-properties \
     apt-file \
+    tzdata \
+ && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && echo "Asia/Shanghai" > /etc/timezone \
  && apt-file update \
  && apt-file search add-apt-repository \
  && apt-get install -f -y software-properties-common \

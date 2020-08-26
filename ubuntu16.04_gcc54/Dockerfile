@@ -18,6 +18,7 @@ COPY ./doc /root/
 # python3.5.2 
 # pip3 20.2.2
 # 解决python和echo均不能打印中文问题
+# 解决本机和docker内时间差相差8h问题
 RUN cp /etc/apt/sources.list /etc/apt/sources.list.bk \
  && cp /root/sources.list.xenial /etc/apt/sources.list \
  && mkdir ~/.pip/ \
@@ -29,6 +30,9 @@ RUN cp /etc/apt/sources.list /etc/apt/sources.list.bk \
     cmake \
     g++ \
     locales \
+    tzdata \
+ && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+ && echo "Asia/Shanghai" > /etc/timezone \
  && python3.5 /root/get-pip.py \
  && python2.7 /root/get-pip.py \
  && locale-gen en_US.UTF-8 \
